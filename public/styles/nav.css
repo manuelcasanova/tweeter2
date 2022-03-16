@@ -7,3 +7,23 @@ nav {
   padding: 1.5em;
   font-family: 'Bungee', sans-serif;
 }
+
+#logo {
+  font-family: 'Bungee', sans-serif;
+}
+
+#write-new {
+  margin-left: auto;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  background-color: #4056A1;
+  color: #fa0101;
+  border-style: none;
+  cursor: pointer;
+  outline: none;
+}
