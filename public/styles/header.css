@@ -5,5 +5,10 @@ header {
   color: #FFFFFF;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  position: relative;
+  top: 120px;
+  align-items: center;
+  flex-direction: column; /*Name below avatar*/
+  background-image: url(../images/tileable-wood-colored.png);
 }
+
