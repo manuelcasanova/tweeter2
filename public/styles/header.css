@@ -5,7 +5,7 @@ header {
   color: #FFFFFF;
   display: flex;
   justify-content: center;
-  position: fixed; /*Change between fixed and relative to scroll lock/unlock*/
+  position: relative; /*Change between fixed and relative to scroll lock/unlock*/
   top: 120px;
   align-items: center;
   flex-direction: column; /*Name below avatar*/
