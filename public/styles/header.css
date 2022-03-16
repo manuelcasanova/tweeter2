@@ -1,11 +1,11 @@
 header {
   height: 400px;
   width: 100%;
-  background-color: #eb540e;
+  background-color: #5b74d5;
   color: #FFFFFF;
   display: flex;
   justify-content: center;
-  position: relative;
+  position: fixed; /*Change between fixed and relative to scroll lock/unlock*/
   top: 120px;
   align-items: center;
   flex-direction: column; /*Name below avatar*/
