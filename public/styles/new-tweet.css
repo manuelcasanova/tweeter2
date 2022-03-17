@@ -1,0 +1,32 @@
+main {
+  width: 90%;
+}
+
+section {
+  width:100%;
+}
+
+label {
+font-family: "Source-sans-pro", sans-serif;
+display: flex;
+}
+
+textarea {
+  resize: none; /*So the text area cannot be resized*/
+  width: 100%;
+  border-style: none;
+
+}
+
+button {
+  background-color: #4056A1;
+  color: #ffffff;
+  border-style: none;
+  cursor: pointer;
+  outline: none;
+  font-family: "Bungee", sans-serif;
+}
+
+output {
+  font-family: "Bungee", sans-serif;
+}
