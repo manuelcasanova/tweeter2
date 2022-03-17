@@ -15,6 +15,7 @@ textarea {
   resize: none; /*So the text area cannot be resized*/
   width: 100%;
   border-style: none;
+  border-bottom: solid;
 
 }
 
@@ -29,4 +30,5 @@ button {
 
 output {
   font-family: "Bungee", sans-serif;
+  float: right; /*To separate the buttom TWEET from the number 140*/
 }
