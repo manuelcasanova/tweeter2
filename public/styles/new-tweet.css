@@ -15,7 +15,7 @@ textarea {
   resize: none; /*So the text area cannot be resized*/
   width: 100%;
   border-style: none;
-
+  border-bottom: solid;
 }
 
 .submit-button {
