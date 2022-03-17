@@ -15,11 +15,10 @@ textarea {
   resize: none; /*So the text area cannot be resized*/
   width: 100%;
   border-style: none;
-  border-bottom: solid;
 
 }
 
-button {
+.submit-button {
   background-color: #4056A1;
   color: #ffffff;
   border-style: none;
