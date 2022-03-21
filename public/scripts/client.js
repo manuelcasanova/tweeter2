@@ -34,7 +34,7 @@ $(document).ready(function() { //.ready when the DOM is fully loaded, run the fu
   const renderTweets = function(tweets) { //Called on line 65. Takes array of tweet object and appends each to the tweets in index
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      $('section.tweets').append($tweet); //Inserts content, specified by the parameter, to the end of each element in the set of matched elements. Inserts function createTweetElement(tweet) in section.tweets.
+      $('section.tweets').prepend($tweet); //Inserts content, specified by the parameter, to the end of each element in the set of matched elements. Inserts function createTweetElement(tweet) in section.tweets.
     }
   };
 
