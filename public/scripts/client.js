@@ -49,7 +49,7 @@ $(document).ready(function() { //.ready when the DOM is fully loaded, run the fu
           </header>
           <p>${tweet.content.text}</p>
           <footer>
-            <p>${tweet["created_at"]}</p>
+            <p>${timeago.format(tweet["created_at"])}</p>
             <h4>
             <i class="fa-solid fa-flag"></i>
             <i class="fa-solid fa-retweet"></i>
