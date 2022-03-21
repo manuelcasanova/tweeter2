@@ -15,22 +15,22 @@ article.tweet:hover {
 
 
 
-article.tweet div {
+article.tweet header {
   display: flex;
   flex-direction: row;
   margin-bottom: 15px;
 }
 
-article.tweet div img {
+article.tweet header img {
   height: 2em;
   margin: 15px
 }
 
-article.tweet div h4 {
+article.tweet header h4 {
   min-width: 20%;
 }
 
-article.tweet div div { /*Only way I could find to leave the picture and the name on the left and @MrsJacobs on the right*/
+article.tweet header div { /*Only way I could find to leave the picture and the name on the left and @MrsJacobs on the right*/
   width: 90%
 }
 
