@@ -41,3 +41,7 @@ article.tweet footer {
   justify-content: space-between;
  }
 
+
+ article.tweet footer h4 i:hover {
+  color: rgb(212, 178, 23);
+ }
