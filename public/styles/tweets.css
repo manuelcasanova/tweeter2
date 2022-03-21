@@ -38,6 +38,10 @@ article.tweet header p { /*Suggested by Ian for the above problem*/
   margin-left: auto;
 }
 
+article.tweet p {
+  overflow-wrap: break-word; /*Long tweets stay within the limits*/
+}
+
 article.tweet footer {
   border-top-style: solid;
   border-width: thick;
