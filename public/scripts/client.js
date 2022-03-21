@@ -76,16 +76,37 @@ $(document).ready(function() { //.ready when the DOM is fully loaded, run the fu
   $('.new-tweet form').submit( function (event) {
     event.preventDefault(); //Prevent the default action (submit) 
     const $form = $(this);
+
+    const newTweet = $form.children("textarea").val(); //What is written in the new tweet form
+    console.log(newTweet);
+    if (!newTweet) {
+      return alert("Error: tweet cannot be empty");    
+    } else if (newTweet.length > 140) {
+      return alert("Error: tweet cannot exceed 140 characters");
+    } 
+
     const tweet = $form.serialize() //Turns a set of form data into a query String
     $.ajax({ url: "/tweets/", method: 'POST', data: tweet })
-    .then (function (postRequestReturnValue) {
-      return $.ajax('/tweets', { method: 'GET' })
+    
+    .then (function () {
+      //return $.ajax('/tweets', { method: 'GET' })
+      return $.get("/tweets")
     })
-    .then (function (getRequestReturnValue) {
-      const latestTweet = [getRequestReturnValue[getRequestReturnValue.length - 1]];
+    .then (function (responseTweets) {
+      const latestTweet = [responseTweets[responseTweets.length - 1]];
       renderTweets(latestTweet);
     })
   })
 
 
 });
+
+// const newTweet = access here to the body
+
+// if (newTweet = "") {
+//   alert("Tweet cannot be empty")
+// } else if (newTweet.length > 140) {
+//   alert("You can write up to 140 characters")
+// } else {
+
+//}
