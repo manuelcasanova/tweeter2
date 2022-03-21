@@ -7,28 +7,28 @@
 $(document).ready(function() { //.ready when the DOM is fully loaded, run the function
 
   const tweetsObject = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
+    // {
+    //   "user": {
+    //     "name": "Newton",
+    //     "avatars": "https://i.imgur.com/73hZDYK.png"
+    //     ,
+    //     "handle": "@SirIsaac"
+    //   },
+    //   "content": {
+    //     "text": "If I have seen further it is by standing on the shoulders of giants"
+    //   },
+    //   "created_at": 1461116232227
+    // },
+    // {
+    //   "user": {
+    //     "name": "Descartes",
+    //     "avatars": "https://i.imgur.com/nlhLi3I.png",
+    //     "handle": "@rd" },
+    //   "content": {
+    //     "text": "Je pense , donc je suis"
+    //   },
+    //   "created_at": 1461113959088
+    // }
   ]
 
   const renderTweets = function(tweets) { //Called on line 65. Takes array of tweet object and appends each to the tweets in index
@@ -63,6 +63,29 @@ $(document).ready(function() { //.ready when the DOM is fully loaded, run the fu
   };
 
   renderTweets(tweetsObject);
+
+  const load = function () {
+    $.ajax('/tweets', { method: 'GET' })
+    .then(function (tweets) {
+      renderTweets(tweets);
+    })
+  }
+
+  load();
+
+  $('.new-tweet form').submit( function (event) {
+    event.preventDefault(); //Prevent the default action (submit) 
+    const $form = $(this);
+    const tweet = $form.serialize() //Turns a set of form data into a query String
+    $.ajax({ url: "/tweets/", method: 'POST', data: tweet })
+    .then (function (postRequestReturnValue) {
+      return $.ajax('/tweets', { method: 'GET' })
+    })
+    .then (function (getRequestReturnValue) {
+      const latestTweet = [getRequestReturnValue[getRequestReturnValue.length - 1]];
+      renderTweets(latestTweet);
+    })
+  })
 
 
 });
