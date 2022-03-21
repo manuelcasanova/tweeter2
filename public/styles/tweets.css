@@ -9,6 +9,12 @@ article.tweet {
   padding: 20px;
 }
 
+article.tweet:hover {
+  box-shadow: 5px 10px;
+}
+
+
+
 article.tweet div {
   display: flex;
   flex-direction: row;
