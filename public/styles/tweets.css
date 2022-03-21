@@ -1,0 +1,37 @@
+
+
+article.tweet {
+  border-style: solid;
+  border-width: thick;
+  color: #545149;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 20px;
+}
+
+article.tweet div {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+
+article.tweet div img {
+  height: 2em;
+  margin: 15px
+}
+
+article.tweet div h4 {
+  min-width: 20%;
+}
+
+article.tweet div div { /*Only way I could find to leave the picture and the name on the left and @MrsJacobs on the right*/
+  width: 90%
+}
+
+article.tweet footer {
+  border-top-style: solid;
+  border-width: thick;
+  display: flex;
+  justify-content: space-between;
+ }
+
