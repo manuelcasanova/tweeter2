@@ -1,3 +1,4 @@
+
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
@@ -8,6 +9,14 @@ $(document).ready(function() { //.ready when the DOM is fully loaded, run the fu
 
   const tweetsObject = [
   ]
+
+//Escape function to escape text. Used to avoid an XSS attack
+
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
   const renderTweets = function(tweets) { //Called on line 65. Takes array of tweet object and appends each to the tweets in index
     for (const tweet of tweets) {
@@ -25,7 +34,7 @@ $(document).ready(function() { //.ready when the DOM is fully loaded, run the fu
               <h4>${tweet.user.name}</h4>
               <p>${tweet.user.handle}</p>
           </header>
-          <p>${tweet.content.text}</p>
+          <p>${escape(tweet.content.text)}</p>
           <footer>
             <p>${timeago.format(tweet["created_at"])}</p>
             <h4>
@@ -53,14 +62,17 @@ $(document).ready(function() { //.ready when the DOM is fully loaded, run the fu
 
   $('.new-tweet form').submit( function (event) {
     event.preventDefault(); //Prevent the default action (submit) 
+    
     const $form = $(this);
 
     const newTweet = $form.children("textarea").val(); //What is written in the new tweet form
     console.log(newTweet);
     if (!newTweet) {
-      return alert("Error: tweet cannot be empty");    
+      $(".new-tweet p").append("Error: tweet cannot be empty") 
+      //return alert("Error: tweet cannot be empty");    
     } else if (newTweet.length > 140) {
-      return alert("Error: tweet cannot exceed 140 characters");
+      $(".new-tweet p").append("Error: tweet cannot exceed 140 characters") 
+      //return alert("Error: tweet cannot exceed 140 characters");
     } 
 
     const tweet = $form.serialize() //Turns a set of form data into a query String
