@@ -40,7 +40,9 @@
       <span id="logo">tweeter</span>
       <div id="write-new">
         <span><b>Write</b> a new tweet</span>
-        <button type="button">
+        <button 
+        class="arrows"
+        type="button">
           <i class="fas fa-angle-double-down"></i>
         </button>
       </div> 
@@ -61,7 +63,7 @@
 
      
         <section class="new-tweet">
-          <p></p>
+          <p></p> <!-- This is where the error message will go -->
           <form action="/tweets/" method="POST">
             <label for="tweet-text">What are you humming about?</label>
             <textarea name="text" id="tweet-text"></textarea>
