@@ -62,7 +62,7 @@ $(document).ready(function() { //.ready when the DOM is fully loaded, run the fu
 
   $('.new-tweet form').submit( function (event) {
     event.preventDefault(); //Prevent the default action (submit) 
-    
+    $('.new-tweet p').empty().slideUp();
     const $form = $(this);
 
     const newTweet = $form.children("textarea").val(); //What is written in the new tweet form
@@ -70,21 +70,24 @@ $(document).ready(function() { //.ready when the DOM is fully loaded, run the fu
     if (!newTweet) {
       $(".new-tweet p").append("Error: tweet cannot be empty") 
       //return alert("Error: tweet cannot be empty");    
+      $('.new-tweet p').slideDown();
     } else if (newTweet.length > 140) {
       $(".new-tweet p").append("Error: tweet cannot exceed 140 characters") 
       //return alert("Error: tweet cannot exceed 140 characters");
-    } 
-
-    const tweet = $form.serialize() //Turns a set of form data into a query String
-    $.ajax({ url: "/tweets/", method: 'POST', data: tweet })
-
-    .then (function () {
-      //return $.ajax('/tweets', { method: 'GET' })
-      return $.get("/tweets")
-    })
-    .then (function (responseTweets) {
-      const latestTweet = [responseTweets[responseTweets.length - 1]];
-      renderTweets(latestTweet);
-    })
+      $('.new-tweet p').slideDown();
+    } else {
+      $('.new-tweet p').slideUp();
+      const tweet = $form.serialize() //Turns a set of form data into a query String
+      $.ajax({ url: "/tweets/", method: 'POST', data: tweet })
+  
+      .then (function () {
+        //return $.ajax('/tweets', { method: 'GET' })
+        return $.get("/tweets")
+      })
+      .then (function (responseTweets) {
+        const latestTweet = [responseTweets[responseTweets.length - 1]];
+        renderTweets(latestTweet);
+      })
+    } //else ends here
   })
 });
