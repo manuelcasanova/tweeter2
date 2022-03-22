@@ -22,10 +22,23 @@ nav {
   flex-direction: column;
 }
 
-button {
+@keyframes bounce {
+  from {
+    padding: 0px;
+  }
+  to {
+    padding: 10px;
+  }
+}
+
+button.arrows {
   background-color: #4056A1;
   color: #fa0101;
   border-style: none;
   cursor: pointer;
   outline: none;
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
 }
+
