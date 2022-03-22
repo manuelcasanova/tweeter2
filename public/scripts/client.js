@@ -6,6 +6,9 @@
 
 $(document).ready(function() { //.ready when the DOM is fully loaded, run the function
 
+  const tweetsObject = [
+  ]
+
   const renderTweets = function(tweets) { //Called on line 65. Takes array of tweet object and appends each to the tweets in index
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
@@ -72,5 +75,4 @@ $(document).ready(function() { //.ready when the DOM is fully loaded, run the fu
       renderTweets(latestTweet);
     })
   })
-
 });
