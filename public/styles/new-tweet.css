@@ -8,6 +8,14 @@ section {
   margin-top: 20px;
 }
 
+section.new-tweet p {
+  color: red;
+  border-style: solid;
+  border-color: red;
+  display: flex;
+  justify-content: center;
+}
+
 label {
 font-family: "Source-sans-pro", sans-serif;
 display: flex;
