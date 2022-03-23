@@ -12,11 +12,19 @@ $(document).ready(function() { //.ready when the DOM is fully loaded, run the fu
 
 $(".new-tweet").slideUp(); //The write new tweet is hidden
 
+// $(".round-button").hide(); //Hides the red circle button on the bottom right
+
+$(".round-button").click( function (){
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+}) //Click on the red round button scrolls to the top of the page.
+
+
 $('.arrows').click( function () {
   $(".new-tweet").slideDown() 
   $("textarea").focus() //It sends the cursor to the text area so the user can write directly.
   console.log("Hello");
 });
+
 
   const tweetsObject = [
   ]
