@@ -1,14 +1,14 @@
 main {
   width: 90%;
-  margin-bottom: 90%;
+  /* margin-bottom: 90%; */
 }
 
 section {
   width:100%;
-  margin-top: 20px;
+  margin-top: 20px; /*What are you humming about is now separated from the blue header*/
 }
 
-section.new-tweet p {
+.error {
   color: red;
   border-style: solid;
   border-color: red;
@@ -33,7 +33,7 @@ textarea {
   color: #ffffff;
   border-style: none;
   cursor: pointer;
-  outline: none;
+  /* outline: none; */
   font-family: "Bungee", sans-serif;
 }
 
