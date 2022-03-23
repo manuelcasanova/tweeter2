@@ -7,6 +7,9 @@
 
 $(document).ready(function() { //.ready when the DOM is fully loaded, run the function
 
+  $('.error').empty().slideUp(); 
+  //Solved the issue with showing the border of the error when uploading the page
+
   const tweetsObject = [
   ]
 
@@ -18,14 +21,19 @@ $(document).ready(function() { //.ready when the DOM is fully loaded, run the fu
     return div.innerHTML;
   };
 
-  const renderTweets = function(tweets) { //Called on line 65. Takes array of tweet object and appends each to the tweets in index
+
+  //Function renderTweets takes an array of tweet objects and appends each to the tweets in index
+  const renderTweets = function(tweets) { //Called on line 65. 
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
       $('section.tweets').prepend($tweet); //Inserts content, specified by the parameter, to the end of each element in the set of matched elements. Inserts function createTweetElement(tweet) in section.tweets.
     }
   };
 
-  const createTweetElement = function(tweet) { //Takes tweet object and returns tweet article element with the html of the tweet.
+
+  //Function createTweetElement takes in a tweet object and returns tweet article element with the html of the tweet.
+
+  const createTweetElement = function(tweet) { 
     const $tweet = $("<article>").addClass("tweet"); //Adds the specified class(es) to each element in the set of matched elements.
 
     const html = `
@@ -51,43 +59,40 @@ $(document).ready(function() { //.ready when the DOM is fully loaded, run the fu
 
   renderTweets(tweetsObject);
 
-  const load = function () {
+// Function loadTweets  fetchs the tweets from http://localhost:8080/tweets
+
+  const loadTweets = function () {
     $.ajax('/tweets', { method: 'GET' })
     .then(function (tweets) {
       renderTweets(tweets);
     })
   }
 
-  load();
+  loadTweets();
 
   $('.new-tweet form').submit( function (event) {
-    event.preventDefault(); //Prevent the default action (submit) 
-    $('.new-tweet p').empty().slideUp();
+    event.preventDefault(); //Prevent the default action (does not refresh) 
+    $('.error').empty().slideUp();
     const $form = $(this);
-
-    const newTweet = $form.children("textarea").val(); //What is written in the new tweet form
-    console.log(newTweet);
+    // const newTweet = $("textarea")
+    const newTweet = $form.children("textarea").val(); //What is written in the new tweet form. Without .val it just references the dom object.
     if (!newTweet) {
-      $(".new-tweet p").append("Error: tweet cannot be empty") 
-      //return alert("Error: tweet cannot be empty");    
-      $('.new-tweet p').slideDown();
+      $(".error").append("Error: tweet cannot be empty")    
+      $('.error').slideDown();
     } else if (newTweet.length > 140) {
-      $(".new-tweet p").append("Error: tweet cannot exceed 140 characters") 
-      //return alert("Error: tweet cannot exceed 140 characters");
-      $('.new-tweet p').slideDown();
+      $(".error").append("Error: tweet cannot exceed 140 characters") 
+      $('.error').slideDown();
     } else {
-      $('.new-tweet p').slideUp();
-      const tweet = $form.serialize() //Turns a set of form data into a query String
-      $.ajax({ url: "/tweets/", method: 'POST', data: tweet })
+      $('.error').slideUp();
+      $.ajax({ url: "/tweets/", method: 'POST', data: $form.serialize() }) //.serialize() Encode a set of form elements as a string for submission. Creates a text string in standard URL-encoded notation. It can act on a jQuery. FORM -> OBJECT -> STRING
   
       .then (function () {
-        //return $.ajax('/tweets', { method: 'GET' })
-        return $.get("/tweets")
+        return $.get("/tweets") //alternative: return $.ajax('/tweets', { method: 'GET' })
       })
       .then (function (responseTweets) {
         const latestTweet = [responseTweets[responseTweets.length - 1]];
         renderTweets(latestTweet);
       })
-    } //else ends here
+    }
   })
 });
