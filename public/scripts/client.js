@@ -10,6 +10,12 @@ $(document).ready(function() { //.ready when the DOM is fully loaded, run the fu
   $('.error').empty().slideUp(); 
   //Solved the issue with showing the border of the error when uploading the page
 
+$(".new-tweet").slideUp(); //The write new tweet is hidden
+
+$('button').click( function () {
+  $(".new-tweet").slideDown()
+});
+
   const tweetsObject = [
   ]
 
