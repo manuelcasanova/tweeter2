@@ -13,6 +13,6 @@ header.header {
   background-image: url(../images/clean-gray-paper.png); 
 }
 
-header p {
+header div p {
   font-size: 36px;
 }
