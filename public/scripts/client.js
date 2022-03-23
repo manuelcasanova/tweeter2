@@ -12,8 +12,10 @@ $(document).ready(function() { //.ready when the DOM is fully loaded, run the fu
 
 $(".new-tweet").slideUp(); //The write new tweet is hidden
 
-$('button').click( function () {
-  $(".new-tweet").slideDown()
+$('.arrows').click( function () {
+  $(".new-tweet").slideDown() 
+  $("textarea").focus() //It sends the cursor to the text area so the user can write directly.
+  console.log("Hello");
 });
 
   const tweetsObject = [
