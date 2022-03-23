@@ -9,6 +9,10 @@ header.header {
   top: 120px;
   align-items: center;
   flex-direction: column; /*Name below avatar*/
-  background-image: url(../images/tileable-wood-colored.png);
+  /*https://www.transparenttextures.com/*/
+  background-image: url(../images/clean-gray-paper.png); 
 }
 
+header p {
+  font-size: 36px;
+}
