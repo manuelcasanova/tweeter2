@@ -13,8 +13,6 @@ article.tweet:hover {
   box-shadow: 5px 10px;
 }
 
-
-
 article.tweet header {
   display: flex;
   flex-direction: row;
@@ -30,11 +28,7 @@ article.tweet header h4 {
   min-width: 20%;
 }
 
-/* article.tweet header div { /*Only way I could find to leave the picture and the name on the left and @MrsJacobs on the right*/
-  /* width: 90%
-} */ 
-
-article.tweet header p { /*Suggested by Ian for the above problem*/
+article.tweet header p { /*Suggested by Ian for the above problem. Same solution as (nav.css line 18)*/ 
   margin-left: auto;
 }
 
