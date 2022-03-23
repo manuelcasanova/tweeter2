@@ -1,13 +1,14 @@
 nav {
   height: 120px;
   width: 100%;
-  background-color: #4056A1;
+  background-color: #5b74d5;
   color: #FFFFFF;
   padding: 1.5em;
   font-family: 'Bungee', sans-serif;
   display: flex;
   position: fixed;
   z-index: 1;
+  /* background-image: url(../images/clean-gray-paper.png); */
 }
 
 #logo {
@@ -15,7 +16,7 @@ nav {
 }
 
 #write-new {
-  margin-left: auto;
+  margin-left: auto; /*Solution to place it to the right*/
   font-family: 'Source Sans Pro', sans-serif;
   color: #FFFFFF;
   display: flex;
@@ -27,16 +28,17 @@ nav {
     padding: 0px;
   }
   to {
-    padding: 10px;
+    padding: 5px;
   }
+
+
 }
 
 button.arrows {
-  background-color: #4056A1;
+  background-color: #5b74d5;
   color: #fa0101;
   border-style: none;
   cursor: pointer;
-  outline: none;
   animation-name: bounce;
   animation-duration: 1s;
   animation-iteration-count: infinite;
