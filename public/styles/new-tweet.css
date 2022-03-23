@@ -17,15 +17,18 @@ section {
 }
 
 label {
+margin-top: 20px;
 font-family: "Source-sans-pro", sans-serif;
 display: flex;
 }
 
 textarea {
   resize: none; /*So the text area cannot be resized*/
+  margin-top: 20px;
   width: 100%;
   border-style: none;
   border-bottom: solid;
+  background-color: #f4f1ec;
 }
 
 .submit-button {
