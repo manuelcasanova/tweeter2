@@ -47,3 +47,19 @@ article.tweet footer {
  article.tweet footer h4 i:hover {
   color: rgb(212, 178, 23);
  }
+
+ .round-button {
+  width: 100%;
+  font-size: 24px;
+  color: white;
+  background-color: red;
+  border: none;
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  margin-bottom: 20px;
+  position: fixed;
+  cursor: pointer;
+  margin-left: 80%;
+  margin-top: 10%;
+ }
