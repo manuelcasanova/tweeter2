@@ -12,7 +12,11 @@ $(document).ready(function() { //.ready when the DOM is fully loaded, run the fu
 
 $(".new-tweet").slideUp(); //The write new tweet is hidden
 
-// $(".round-button").hide(); //Hides the red circle button on the bottom right
+$(".round-button").hide(); //Hides the red circle button on the bottom right
+
+$(document).scroll( function () {
+  $(".round-button").show();
+}); //Shows the hidden red circle button
 
 $(".round-button").click( function (){
   $("html, body").animate({ scrollTop: 0 }, "slow");
