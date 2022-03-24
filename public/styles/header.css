@@ -5,7 +5,8 @@ header.header {
   color: #FFFFFF;
   display: flex;
   justify-content: center;
-  position: relative; /*Change between fixed and relative to scroll lock/unlock*/
+  position:; /*Change between fixed and relative to scroll lock/unlock*/ 
+  /*Removed it to accomplish stretch activity "Add a Second Toggle Button"*/
   top: 120px;
   align-items: center;
   flex-direction: column; /*Name below avatar*/
