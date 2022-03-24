@@ -6,7 +6,8 @@ nav {
   padding: 1.5em;
   font-family: 'Bungee', sans-serif;
   display: flex;
-  position: fixed;
+  /* position: fixed; */
+    /*Removed it to accomplish stretch activity "Add a Second Toggle Button"*/
   z-index: 1;
   /* background-image: url(../images/clean-gray-paper.png); */
 }
