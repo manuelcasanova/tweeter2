@@ -8,25 +8,51 @@
 $(document).ready(function() { //.ready when the DOM is fully loaded, run the function
 
   $('.error').empty().slideUp(); 
-  //Solved the issue with showing the border of the error when uploading the page
+  //Solves the issue with showing the border of the error when uploading the page
 
-$(".new-tweet").slideUp(); //The write new tweet is hidden
+  //The write new tweet is hidden upon loading the page
+$(".new-tweet").slideUp(); 
 
-$(".round-button").hide(); //Hides the red circle button on the bottom right
+//Hides the red circle button on the bottom right upon loading the page
+$(".round-button").hide(); 
 
-$(document).scroll( function () {
-  $(".round-button").show();
-}); //Shows the hidden red circle button
+$(document).scroll(function() {
 
+//If we are at the top of the browser
+  if ($(window).scrollTop() === 0) {
+    $(".round-button").hide();
+    $(".new-tweet").slideDown();
+    $("textarea").focus() //It sends the cursor to the text area so the user can write directly.
+    
+//If we are not at the top of the browser
+  } else {
+    $(".round-button").show();
+  }
+});
+
+//Click on the red round button scrolls to the top of the page.
 $(".round-button").click( function (){
   $("html, body").animate({ scrollTop: 0 }, "slow");
-}) //Click on the red round button scrolls to the top of the page.
+}) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 $('.arrows').click( function () {
   $(".new-tweet").slideDown() 
   $("textarea").focus() //It sends the cursor to the text area so the user can write directly.
-  console.log("Hello");
 });
 
 
