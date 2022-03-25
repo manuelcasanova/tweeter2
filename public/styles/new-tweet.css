@@ -29,6 +29,7 @@ textarea {
   border-style: none;
   border-bottom: solid;
   background-color: #f4f1ec;
+  outline: none;
 }
 
 .submit-button {
