@@ -35,26 +35,10 @@ $(".round-button").click( function (){
   $("html, body").animate({ scrollTop: 0 }, "slow");
 }) 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $('.arrows').click( function () {
   $(".new-tweet").slideDown() 
   $("textarea").focus() //It sends the cursor to the text area so the user can write directly.
 });
-
 
   const tweetsObject = [
   ]
@@ -139,6 +123,12 @@ $('.arrows').click( function () {
         const latestTweet = [responseTweets[responseTweets.length - 1]];
         renderTweets(latestTweet);
       })
+          //When submitting empties the textarea and focuses on it
+      .then ($('#tweet-text').val('').trigger("input").focus()); 
+ 
+
+
+
     }
   })
 });
