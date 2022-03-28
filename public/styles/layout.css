@@ -19,7 +19,7 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
-  position: relative; /*allows to scroll together with main position: absolute*/
+  /*position: relative; /*allows to scroll together with main position: absolute*/
 }
 
 #logo { /*Exception to the body*/
@@ -31,13 +31,31 @@ body {
  */
 
 main {
+  
   margin-right: 5%;
   margin-left: 5%;
   background-color: #f4f1ec;
   color: #545149;
-  position: absolute; /*allows to scroll together with body position: relative*/
+  /*position: absolute; /*allows to scroll together with body position: relative*/
   top: 520px; /*120 nav 400 header*/
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+ /* ------------------- DESKTOP SCREEN SIZES ------------------- */
+
+ @media (min-width: 1024px) {
+   .headerAndMain {
+     display: flex;
+     flex-direction: row;
+    
+   }
+ }
+
+ @media (min-width: 1024px) {
+   main {
+    margin-left: 50%;
+   }
+
+ }
