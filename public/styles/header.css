@@ -5,18 +5,16 @@ header.header {
   color: #FFFFFF;
   display: flex;
   justify-content: center;
-  position:; /*Change between fixed and relative to scroll lock/unlock*/ 
+  /*position:;*/ /*Change between fixed and relative to scroll lock/unlock*/ 
   /*Removed it to accomplish stretch activity "Add a Second Toggle Button"*/
   top: 120px;
   align-items: center;
-  flex-direction: column; /*Name below avatar*/
-  /*https://www.transparenttextures.com/*/
+  flex-direction: column; 
   background-image: url(../images/clean-gray-paper.png); 
 }
 
 header div p {
   font-size: 36px;
-
 }
 
  /* ------------------- DESKTOP SCREEN SIZES ------------------- */
@@ -27,5 +25,4 @@ header div p {
     width: 40%;
     position: absolute;
   }
-
 }
