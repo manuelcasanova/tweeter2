@@ -31,7 +31,6 @@ body {
  */
 
 main {
-  
   margin-right: 5%;
   margin-left: 5%;
   background-color: #f4f1ec;
@@ -49,7 +48,6 @@ main {
    .headerAndMain {
      display: flex;
      flex-direction: row;
-    
    }
  }
 
@@ -57,5 +55,4 @@ main {
    main {
     margin-left: 50%;
    }
-
  }

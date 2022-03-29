@@ -1,11 +1,10 @@
 main {
   width: 90%;
-  /* margin-bottom: 90%; */
 }
 
 section {
   width:100%;
-  margin-top: 20px; /*What are you humming about is now separated from the blue header*/
+  margin-top: 20px;
 }
 
 .error {
@@ -23,7 +22,7 @@ display: flex;
 }
 
 textarea {
-  resize: none; /*So the text area cannot be resized*/
+  resize: none; 
   margin-top: 20px;
   width: 100%;
   border-style: none;
@@ -37,11 +36,10 @@ textarea {
   color: #ffffff;
   border-style: none;
   cursor: pointer;
-  /* outline: none; */
   font-family: "Bungee", sans-serif;
 }
 
 output {
   font-family: "Bungee", sans-serif;
-  float: right; /*To separate the buttom TWEET from the number 140*/
+  float: right;
 }

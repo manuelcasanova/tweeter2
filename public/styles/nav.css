@@ -1,7 +1,7 @@
 nav {
   height: 120px;
   width: 100%;
-  background-color: #5b74d5;
+  background-color: #4056A1;
   color: #FFFFFF;
   padding: 1.5em;
   font-family: 'Bungee', sans-serif;
@@ -9,7 +9,6 @@ nav {
   /* position: fixed; */
     /*Removed it to accomplish stretch activity "Add a Second Toggle Button"*/
   z-index: 1;
-  /* background-image: url(../images/clean-gray-paper.png); */
 }
 
 #logo {
@@ -17,7 +16,7 @@ nav {
 }
 
 #write-new {
-  margin-left: auto; /*Solution to place it to the right*/
+  margin-left: auto;
   font-family: 'Source Sans Pro', sans-serif;
   color: #FFFFFF;
   display: flex;
@@ -31,12 +30,10 @@ nav {
   to {
     padding: 5px;
   }
-
-
 }
 
 button.arrows {
-  background-color: #5b74d5;
+  background-color: #4056A1;
   color: #fa0101;
   border-style: none;
   cursor: pointer;

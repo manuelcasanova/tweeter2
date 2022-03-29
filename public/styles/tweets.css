@@ -26,12 +26,12 @@ article.tweet header h4 {
   min-width: 20%;
 }
 
-article.tweet header p { /*Suggested by Ian for the above problem. Same solution as (nav.css line 18)*/ 
+article.tweet header p { 
   margin-left: auto;
 }
 
 article.tweet p {
-  overflow-wrap: break-word; /*Long tweets stay within the limits*/
+  overflow-wrap: break-word;
 }
 
 article.tweet footer {
