@@ -1,37 +1,24 @@
-
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function() { //.ready when the DOM is fully loaded, run the function
-
-
+$(document).ready(function() { 
 
   $('.error').empty().slideUp(); 
-  //Solves the issue with showing the border of the error when uploading the page
-
-  //The write new tweet is hidden upon loading the page
   $(".new-tweet").slideUp(); 
-
-//Hides the red circle button on the bottom right upon loading the page
   $(".round-button").hide(); 
 
   $(document).scroll(function() {
-
-//If we are at the top of the browser
   if ($(window).scrollTop() === 0) {
     $(".round-button").hide();
-    $("textarea").focus() //It sends the cursor to the text area so the user can write directly.
-    
-//If we are not at the top of the browser
+    $("textarea").focus() 
   } else {
     $(".round-button").show();
   }
 });
 
-//Click on the red round button scrolls to the top of the page.
 $(".round-button").click( function (){
   $("html, body").animate({ scrollTop: 0 }, "slow");
   $(".new-tweet").slideDown();
@@ -39,7 +26,7 @@ $(".round-button").click( function (){
 
 $('.arrows').click( function () {
   $(".new-tweet").slideDown() 
-  $("textarea").focus() //It sends the cursor to the text area so the user can write directly.
+  $("textarea").focus()
 });
 
   const tweetsObject = [
@@ -55,7 +42,7 @@ $('.arrows').click( function () {
 
 
   //Function renderTweets takes an array of tweet objects and appends each to the tweets in index
-  const renderTweets = function(tweets) { //Called on line 65. 
+  const renderTweets = function(tweets) {  
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
       $('section.tweets').prepend($tweet); //Inserts content, specified by the parameter, to the end of each element in the set of matched elements. Inserts function createTweetElement(tweet) in section.tweets.
@@ -63,15 +50,11 @@ $('.arrows').click( function () {
     $(".time_ago").timeago();
   };
 
-
-
   //Function createTweetElement takes in a tweet object and returns tweet article element with the html of the tweet.
 
   const createTweetElement = function(tweet) { 
-    const $tweet = $("<article>").addClass("tweet"); //Adds the specified class(es) to each element in the set of matched elements.
-
+    const $tweet = $("<article>").addClass("tweet");
     const createdAt = new Date(tweet.created_at);
-
     const html = `
           <header>
               <img src= ${tweet.user.avatars}>
@@ -90,11 +73,8 @@ $('.arrows').click( function () {
             </h4>
           </footer>
           `;
-
-    $tweet.append(html); //Inserts content, specified by the parameter, to the end of each element in the set of matched elements.
+    $tweet.append(html); 
     return $tweet;
-
-  
   };
 
   renderTweets(tweetsObject);
@@ -114,7 +94,6 @@ $('.arrows').click( function () {
     event.preventDefault(); //Prevent the default action (does not refresh) 
     $('.error').empty().slideUp();
     const $form = $(this);
-    // const newTweet = $("textarea")
     const newTweet = $form.children("textarea").val(); //What is written in the new tweet form. Without .val it just references the dom object.
     if (!newTweet) {
       $(".error").append("Error: tweet cannot be empty")    
@@ -127,7 +106,7 @@ $('.arrows').click( function () {
       $.ajax({ url: "/tweets/", method: 'POST', data: $form.serialize() }) //.serialize() Encode a set of form elements as a string for submission. Creates a text string in standard URL-encoded notation. It can act on a jQuery. FORM -> OBJECT -> STRING
   
       .then (function () {
-        return $.get("/tweets") //alternative: return $.ajax('/tweets', { method: 'GET' })
+        return $.get("/tweets")
       })
       .then (function (responseTweets) {
         const latestTweet = [responseTweets[responseTweets.length - 1]];
@@ -135,10 +114,6 @@ $('.arrows').click( function () {
       })
           //When submitting empties the textarea and focuses on it
       .then ($('#tweet-text').val('').trigger("input").focus()); 
- 
-
-
-
     }
   })
 });
