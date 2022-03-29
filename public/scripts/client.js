@@ -7,16 +7,18 @@
 
 $(document).ready(function() { //.ready when the DOM is fully loaded, run the function
 
+
+
   $('.error').empty().slideUp(); 
   //Solves the issue with showing the border of the error when uploading the page
 
   //The write new tweet is hidden upon loading the page
-$(".new-tweet").slideUp(); 
+  $(".new-tweet").slideUp(); 
 
 //Hides the red circle button on the bottom right upon loading the page
-$(".round-button").hide(); 
+  $(".round-button").hide(); 
 
-$(document).scroll(function() {
+  $(document).scroll(function() {
 
 //If we are at the top of the browser
   if ($(window).scrollTop() === 0) {
@@ -58,13 +60,17 @@ $('.arrows').click( function () {
       const $tweet = createTweetElement(tweet);
       $('section.tweets').prepend($tweet); //Inserts content, specified by the parameter, to the end of each element in the set of matched elements. Inserts function createTweetElement(tweet) in section.tweets.
     }
+    $(".time_ago").timeago();
   };
+
 
 
   //Function createTweetElement takes in a tweet object and returns tweet article element with the html of the tweet.
 
   const createTweetElement = function(tweet) { 
     const $tweet = $("<article>").addClass("tweet"); //Adds the specified class(es) to each element in the set of matched elements.
+
+    const createdAt = new Date(tweet.created_at);
 
     const html = `
           <header>
@@ -74,7 +80,9 @@ $('.arrows').click( function () {
           </header>
           <p>${escape(tweet.content.text)}</p>
           <footer>
-            <p class="timeago">${timeago.format(tweet["created_at"])}</p>
+          
+            <time class="time_ago" datetime="${createdAt.toISOString()}">
+            ${tweet.created_at}</time>
             <h4>
             <i class="fa-solid fa-flag"></i>
             <i class="fa-solid fa-retweet"></i>
@@ -85,6 +93,8 @@ $('.arrows').click( function () {
 
     $tweet.append(html); //Inserts content, specified by the parameter, to the end of each element in the set of matched elements.
     return $tweet;
+
+  
   };
 
   renderTweets(tweetsObject);
