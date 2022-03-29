@@ -21,7 +21,6 @@ $(document).scroll(function() {
 //If we are at the top of the browser
   if ($(window).scrollTop() === 0) {
     $(".round-button").hide();
-    $(".new-tweet").slideDown();
     $("textarea").focus() //It sends the cursor to the text area so the user can write directly.
     
 //If we are not at the top of the browser
@@ -33,6 +32,7 @@ $(document).scroll(function() {
 //Click on the red round button scrolls to the top of the page.
 $(".round-button").click( function (){
   $("html, body").animate({ scrollTop: 0 }, "slow");
+  $(".new-tweet").slideDown();
 }) 
 
 $('.arrows').click( function () {
@@ -74,7 +74,7 @@ $('.arrows').click( function () {
           </header>
           <p>${escape(tweet.content.text)}</p>
           <footer>
-            <p>${timeago.format(tweet["created_at"])}</p>
+            <p class="timeago">${timeago.format(tweet["created_at"])}</p>
             <h4>
             <i class="fa-solid fa-flag"></i>
             <i class="fa-solid fa-retweet"></i>
