@@ -41,6 +41,10 @@ article.tweet footer {
   justify-content: space-between;
  }
 
+ article.tweet footer time {
+  display: flex;
+  align-items: center;
+ }
 
  article.tweet footer h4 i:hover {
   color: rgb(212, 178, 23);
