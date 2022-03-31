@@ -23,6 +23,6 @@ header div p {
   header.header {
     margin: 50px 50px 50px 50px;
     width: 40%;
-    position: absolute;
+    position: fixed; /*In the last commit I had left it on absolute*/
   }
 }
