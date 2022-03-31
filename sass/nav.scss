@@ -1,0 +1,44 @@
+nav {
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding: 1.5em;
+  font-family: 'Bungee', sans-serif;
+  display: flex;
+  /* position: fixed; */
+    /*Removed it to accomplish stretch activity "Add a Second Toggle Button"*/
+  z-index: 1;
+}
+
+#logo {
+  font-family: 'Bungee', sans-serif;
+}
+
+#write-new {
+  margin-left: auto;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes bounce {
+  from {
+    padding: 0px;
+  }
+  to {
+    padding: 5px;
+  }
+}
+
+button.arrows {
+  background-color: #4056A1;
+  color: #fa0101;
+  border-style: none;
+  cursor: pointer;
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
