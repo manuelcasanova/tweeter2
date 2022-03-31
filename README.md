@@ -44,6 +44,8 @@ Scroll to top button
 
 ## Dependencies
 
-- Express
+- Express: ^4.17.3
 - Node 5.10.x or above
-- Chance
+- Chance: ^1.0.2
+- Body-parser: ^1.15.2 
+- Md5: ^2.1.0
