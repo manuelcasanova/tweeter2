@@ -3,7 +3,7 @@ main {
 }
 
 section {
-  width:100%;
+  width: 100%;
   margin-top: 20px;
 }
 
@@ -16,13 +16,13 @@ section {
 }
 
 label {
-margin-top: 20px;
-font-family: "Source-sans-pro", sans-serif;
-display: flex;
+  margin-top: 20px;
+  font-family: "Source-sans-pro", sans-serif;
+  display: flex;
 }
 
 textarea {
-  resize: none; 
+  resize: none;
   margin-top: 20px;
   width: 100%;
   border-style: none;

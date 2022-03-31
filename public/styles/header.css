@@ -5,21 +5,20 @@ header.header {
   color: #FFFFFF;
   display: flex;
   justify-content: center;
-  /*position:;*/ /*Change between fixed and relative to scroll lock/unlock*/ 
+  align-items: center;
+  flex-direction: column;
+  /*position:;*/
+  /*Change between fixed and relative to scroll lock/unlock*/
   /*Removed it to accomplish stretch activity "Add a Second Toggle Button"*/
   top: 120px;
-  align-items: center;
-  flex-direction: column; 
-  background-image: url(../images/clean-gray-paper.png); 
+  background-image: url(../images/clean-gray-paper.png);
 }
-
-header div p {
+header.header div p {
   font-size: 36px;
 }
 
- /* ------------------- DESKTOP SCREEN SIZES ------------------- */
-
- @media (min-width: 1024px) {
+/* ------------------- DESKTOP SCREEN SIZES ------------------- */
+@media (min-width: 1024px) {
   header.header {
     margin: 50px 50px 50px 50px;
     width: 40%;

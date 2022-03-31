@@ -4,20 +4,20 @@ nav {
   background-color: #4056A1;
   color: #FFFFFF;
   padding: 1.5em;
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
   display: flex;
   /* position: fixed; */
-    /*Removed it to accomplish stretch activity "Add a Second Toggle Button"*/
+  /*Removed it to accomplish stretch activity "Add a Second Toggle Button"*/
   z-index: 1;
 }
 
 #logo {
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
 }
 
 #write-new {
   margin-left: auto;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   color: #FFFFFF;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,6 @@ nav {
     padding: 5px;
   }
 }
-
 button.arrows {
   background-color: #4056A1;
   color: #fa0101;
@@ -41,4 +40,3 @@ button.arrows {
   animation-duration: 1s;
   animation-iteration-count: infinite;
 }
-

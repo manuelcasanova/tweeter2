@@ -5,46 +5,40 @@ article.tweet {
   margin-top: 50px;
   margin-bottom: 50px;
   padding: 20px;
+  header {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    h4 {
+      min-width: 20%;
+    }
+    p { 
+      margin-left: auto;
+    }
+  }
+  img {
+    height: 2em;
+    margin: 15px
+  }
+  footer {
+    border-top-style: solid;
+    border-width: thick;
+    display: flex;
+    justify-content: space-between;
+    time {
+      display: flex;
+      align-items: center;
+     }
+   } 
 }
 
 article.tweet:hover {
   box-shadow: 5px 10px;
 }
 
-article.tweet header {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 15px;
-}
-
-article.tweet header img {
-  height: 2em;
-  margin: 15px
-}
-
-article.tweet header h4 {
-  min-width: 20%;
-}
-
-article.tweet header p { 
-  margin-left: auto;
-}
-
 article.tweet p {
   overflow-wrap: break-word;
 }
-
-article.tweet footer {
-  border-top-style: solid;
-  border-width: thick;
-  display: flex;
-  justify-content: space-between;
- }
-
- article.tweet footer time {
-  display: flex;
-  align-items: center;
- }
 
  article.tweet footer h4 i:hover {
   color: rgb(212, 178, 23);

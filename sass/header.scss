@@ -1,21 +1,27 @@
+$back-ground-color: #5b74d5;
+@mixin theme() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+}
+
+
 header.header {
   height: 400px;
   width: 100%;
-  background-color: #5b74d5;
+  background-color: $back-ground-color;
   color: #FFFFFF;
-  display: flex;
-  justify-content: center;
+  @include theme;
   /*position:;*/ /*Change between fixed and relative to scroll lock/unlock*/ 
   /*Removed it to accomplish stretch activity "Add a Second Toggle Button"*/
-  top: 120px;
-  align-items: center;
-  flex-direction: column; 
+  top: 120px; 
   background-image: url(../images/clean-gray-paper.png); 
+  div p {
+    font-size: 36px;
+  }
 }
 
-header div p {
-  font-size: 36px;
-}
 
  /* ------------------- DESKTOP SCREEN SIZES ------------------- */
 
